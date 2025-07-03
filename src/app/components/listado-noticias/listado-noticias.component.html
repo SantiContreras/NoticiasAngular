@@ -1,1 +1,22 @@
-<p>listado-noticias works!</p>
+<div *ngFor="let noticias of listaNoticias" class="card mb-3" style="max-width: 1200px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img [src]="noticias.urlToImage" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{noticias.title}}</h5>
+        <p class="card-text">{{noticias.description}}</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        
+          <a [href]="noticias.url" target="_blank"  class="btn btn-primary btn-block">go</a>
+        
+      </div>
+
+
+    </div>
+
+   
+  </div>
+
+</div>

@@ -19,13 +19,15 @@ export class FormularioComponent implements OnInit {
     { value: 'business', nombre: 'Negocios' },
     { value: 'deport', nombre: 'Deporte' },
     { value: 'salud', nombre: 'Salud' }
-  ]
+  ] 
 
   paises: any[] = [
     { value: 'ar', nombre: 'Argentina' },
     { value: 'br', nombre: 'Brasil' },
     { value: 'fr', nombre: 'francia' },
     { value: 'al', nombre: 'alemania' },
+    {value : 'us' , nombre:'usa'},
+    {value:'gb' , nombre: 'reino unido'}
   ]
 
   constructor() { }
@@ -37,8 +39,9 @@ export class FormularioComponent implements OnInit {
   buscarNoticias(){
 
     const parametros = {
-      categoria:this.categoriaSeleccionada,
-      pais:this.paisSeleccionado
+     
+      pais:this.paisSeleccionado,
+      categoria: this.categoriaSeleccionada
     }
 
     this.parametrosSeleccionados.emit(parametros);

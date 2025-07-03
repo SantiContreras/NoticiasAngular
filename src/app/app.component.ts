@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NoticiasService } from './services/noticias.service';
+import { error } from 'node:console';
 
 @Component({
   selector: 'app-root',
@@ -9,16 +10,20 @@ import { NoticiasService } from './services/noticias.service';
 })
 export class AppComponent {
   title = 'Noticias';
-
- constructor(private _noticiasService :NoticiasService){
+  
+  listaNoticias : any = []
+ constructor(private noticiasService :NoticiasService){
 
  }
   BuscarNoticias(parametros:any){
       console.log('soy el padre'),
       console.log(parametros)
 
-      this._noticiasService.getNoticias(parametros).subscribe(data=>{
+      this.noticiasService.getNoticias(parametros).subscribe(data=>{
         console.log(data)
+        this.listaNoticias = data.articles
+      }, error => {
+        console.log(error )
       }
       )
   }

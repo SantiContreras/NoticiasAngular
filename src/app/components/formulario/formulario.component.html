@@ -6,7 +6,7 @@
             <form (ngSubmit)="buscarNoticias()">
                 <div class="form-group">
 
-                    <select name="categoria"  class="form-control form-control-lg" [(ngModel)]="categoriaSeleccionada">
+                   <select name="categoria"  class="form-control form-control-lg" [(ngModel)]="categoriaSeleccionada">
                         <option [value]="categoria.value" *ngFor="let categoria of categorias">{{categoria.nombre}}</option>
                      
                     </select>

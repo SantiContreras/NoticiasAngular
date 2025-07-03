@@ -8,7 +8,8 @@ import { ListadoNoticiasComponent } from './components/listado-noticias/listado-
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SpinnerComponent } from './shared/spinner/spinner.component';
 import { FormsModule} from '@angular/forms'
-import { HttpClient,  httpResource, provideHttpClient } from '@angular/common/http';
+import {  provideHttpClient, withFetch } from '@angular/common/http';
+
 
 
 
@@ -26,13 +27,14 @@ import { HttpClient,  httpResource, provideHttpClient } from '@angular/common/ht
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClient,
+    
     
     
    
   ],
   providers: [
     provideClientHydration(withEventReplay()),
+    provideHttpClient( withFetch())
     
    
   ],
